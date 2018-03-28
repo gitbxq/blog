@@ -2,6 +2,7 @@
 GLOBAL STYLES
 ***************/
 
+// A better box-sizing practice http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
 html {
   box-sizing: border-box;
 }
@@ -15,7 +16,6 @@ body {
 	font-size: 112.5%; // 18px base font size
 	color: $black;
 	overflow-x: hidden;
-  margin: 0;
 
 	p , ul {
 		margin: 0 0 2rem;
@@ -40,10 +40,8 @@ img,video,audio,iframe,object{
 
 // Layout
 .container {
-  max-width: 610px;
+	@include container(610px);
 	padding: 0 20px;
-	margin-left: auto;
-	margin-right: auto;
 }
 
 
@@ -123,7 +121,7 @@ MENU STYLING
   text-decoration: none;
   position: relative;
   right: 2rem;
-  transition: all 0.2s ease-in-out;
+  @include transition(all 0.2s ease-in-out);
 
   &:hover {
   	color: white;
@@ -171,6 +169,7 @@ PAGE STYLES
 	padding-top: 1em;
 }
 
+
 /***************
 HEADER STYLING
 ***************/
@@ -186,7 +185,7 @@ HEADER STYLING
 
 	.container {
 		padding: 0;
-    max-width: 100%;
+		@include container(100%);
 	}
 
 	h1 {
@@ -323,6 +322,8 @@ POST NAV STYLING
 			display: block;
 			position: absolute;
 			top: 50%;
+			-webkit-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
 			transform: translateY(-50%);
 			left: 0;
 			width: 100%;
@@ -335,6 +336,8 @@ POST NAV STYLING
 			padding: .5rem;
 			position: absolute;
 			top: 50%;
+			-webkit-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
 			transform: translateY(-50%);
 			width: 100%;
 			line-height: 1.4;
@@ -346,7 +349,7 @@ POST NAV STYLING
 			text-shadow: 1px 1px 3px rgba(0,0,0,.8);
 			padding: 0 .5rem;
 			position: relative;
-			transition: all 0.2s ease-in-out;
+			@include transition(all 0.2s ease-in-out);
 		}
 
 		&:hover {
@@ -377,12 +380,11 @@ FOOTER STYLING
 .footer {
 	text-align: center;
 	padding: 2rem 0;
-	clear: both;
 
 	.container {
 		border-top: 4px solid darken(white, 15%);
 		padding-top: .5em;
-    max-width: 90%;
+		@include container(90%);
 	}
 
 	.copy, .footer-links {
@@ -404,7 +406,7 @@ FOOTER STYLING
 					display: inline-block;
 					width: 30px;
 					height: 30px;
-					transition: all 0.2s ease-in-out;
+					@include transition(all 0.2s ease-in-out);
 
 					svg {
 						display: block;
@@ -491,4 +493,3 @@ POST LIST STYLING
 		}
 	}
 }
-

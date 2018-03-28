@@ -2,10 +2,6 @@
 GLOBAL STYLES
 ***************/
 
-body {
-  font-size: 125%;
-}
-
 .content {
 	padding-top: 0;
 	position: relative;
@@ -17,19 +13,21 @@ body {
 		content: ""; 
 		display: block;
 		width: 100%;
-		height: 10em;
+		height: 5em;
 		position: absolute;
 		top: -2em;
 		left: 0;
+		-webkit-transform: skewY(-2deg);
+		-ms-transform: skewY(-2deg);
 		transform: skewY(-2deg);
+		-webkit-transform-origin: bottom left;
+		-ms-transform-origin: bottom left;
 		transform-origin: bottom left; 
 	}
 }
 
 .container {
-  max-width: 880px;
-  margin-left: auto;
-  margin-right: auto;
+	@include container(800px); 
 	padding: 0;
 }
 
@@ -40,7 +38,7 @@ HOMEPAGE STYLING
 
 #home {
 	.posts, .pageTitle, .pagination {
-    width: 75%;
+		@include span(9 of 12);
 		float: none;
 		margin: 0 auto 1.5em;
 	}
@@ -63,9 +61,10 @@ HEADER STYLING
 	.container {
 		position: relative;
 		top: 50%;
+		-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
 		transform: translateY(-50%);
-    max-width: 800px;
-		overflow: hidden;
+		@include container(800px); 
 	}
 
 	h1 {
@@ -140,7 +139,7 @@ POST STYLING
 
 .post {
 	h1, h2, h3, h4, h5, h6, p, ul, ol, dl, .pageTitle {
-    width: 75%;
+		@include span(9 of 12); 
 		float: none;
 		margin: 0 auto 2rem; 
 	}
@@ -166,7 +165,11 @@ POST STYLING
 			position: absolute;
 			top: -2em;
 			left: 0;
+			-webkit-transform: skewY(-2deg);
+			-ms-transform: skewY(-2deg);
 			transform: skewY(-2deg);
+			-webkit-transform-origin: bottom left;
+			-ms-transform-origin: bottom left;
 			transform-origin: bottom left;
 		}
 	}
@@ -210,7 +213,7 @@ FOOTER STYLES
 
 	.container {
 		padding: 1rem 0;
-    max-width: 800px;
+		@include container(800px);
 	}
 }
 
@@ -220,16 +223,11 @@ CONTACT PAGE STYLING
 ***************/
 
 .contactContent {
-  max-width: 48%;
-  margin-right: 2%;
-  float: left;
+	@include span(6 of 12);
 }
 
 #contact {
 	form {
-    max-width: 48%;
-    width: 48%;
-    float: right;
-    margin-right: 0;
+		@include span(6 of 12 last);
 	}
 }
