@@ -932,7 +932,8 @@ dd {
     margin: 0
 }
 
-.pageTitle {
+.pageTitle,
+h1 {
     margin: 2rem auto 1em;
     text-align: center
 }
