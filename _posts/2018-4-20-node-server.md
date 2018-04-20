@@ -3,6 +3,8 @@ layout: default
 title: 用 Node.js 搭建本地服务器
 ---
 
+# 用 Node.js 搭建本地服务器
+
 网友 [bottle_](https://segmentfault.com/u/bottle1125) 提供搭建一个简单本地服务器的思路为下：
 
 > - 我们需要一个 HTTP 服务器
