@@ -73,7 +73,7 @@ strong {
 }
 
 blockquote {
-    margin: 1.5em 40px
+    margin: 1.5em 20px
 }
 
 dfn {
@@ -127,9 +127,12 @@ mark {
     color: #000
 }
 
-p,
-pre {
+p {
     margin: 1.5em 0
+}
+
+pre {
+    margin: 0;
 }
 
 small {
@@ -520,7 +523,7 @@ th:last-child {
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     border-radius: 3px;
-    padding: 20px;
+    padding: 10px;
     background: #343642;
     color: #C1C2C3
 }
@@ -760,7 +763,7 @@ blockquote {
 
 @media (min-width: 43.75em) {
     blockquote {
-        font-size: 1.5em;
+        font-size: 1.2em;
         line-height: 1.45833333
     }
 }
@@ -797,11 +800,6 @@ body {
     font-size: 112.5%;
     color: #111;
     overflow-x: hidden
-}
-
-body p,
-body ul {
-    margin: 0 0 2rem
 }
 
 ::-moz-selection {
@@ -1245,15 +1243,15 @@ h1 {
         position: relative;
         z-index: 1
     }
-    .content:after {
-        z-index: -1;
+    .header:after {
+        z-index: 0;
         background: white;
         content: "";
         display: block;
         width: 100%;
-        height: 5em;
+        height: 6em;
         position: absolute;
-        top: -2em;
+        bottom: -4em;
         left: 0;
         -webkit-transform: skewY(-2deg);
         -ms-transform: skewY(-2deg);
