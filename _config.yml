@@ -12,17 +12,15 @@ plugins: [jekyll-paginate]
 paginate: 5
 
 navigation:
- - title: Home
+ - title: Blog
    url: /index.html
  - title: About
    url: /about
- - title: Contact
-   url: /contact
 
 social:
    github: zhictory
    # twitter: brianmaierjr
    # facebook: brianmaierjr
-   email: zhcitory@gmail.com
+   email: zhcitory@qq.com
 
 # google_analytics: "UA-58263416-1"
