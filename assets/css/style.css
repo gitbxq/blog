@@ -1166,7 +1166,8 @@ h1 {
 }
 
 .footer-links ul li {
-    display: inline-block
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .footer-links ul li a {
