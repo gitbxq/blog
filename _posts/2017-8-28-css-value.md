@@ -15,12 +15,12 @@ title: CSS 属性赋值
 实际值应该就是我们平时看到的最终值，关于最终值的计算，文档是这么说明的：
 
 > The final value of a property is the result of a four-step calculation: the value is determined through specification (the "specified value"), then resolved into a value that is used for inheritance (the "computed value"), then converted into an absolute value if necessary (the "used value"), and finally transformed according to the limitations of the local environment (the "actual value").
-
+>  
 > 属性的最终值是4步计算的结果：值通过指定来确定（specified value），接着处理得到一个用于继承的值（computed value），然后如果有必要的话转化为一个绝对值（used value），最后根据本地环境限制进行转换（actual value）。
 
 我按自己的理解做了个实验来查看这四个值，其中为了证明 computed value 是用于继承的，将字体设为奇怪的 16.00005px。
 
-```
+```HTML
 <style>
 body {
   font-size: 16.00005px;

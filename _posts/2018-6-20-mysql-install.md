@@ -5,9 +5,9 @@ title: MySQL Community Server 8.0.11 安装教程
 
 # MySQL Community Server 8.0.11 安装教程
 
-> 原文：https://blog.csdn.net/zwj1030711290/article/details/80039780
+> 原文：[MySQL 8.0 Windows zip 安装过程](https://blog.csdn.net/zwj1030711290/article/details/80039780)
 
-首先下载 MySQL Community Server 8.0.11：https://dev.mysql.com/downloads/mysql/
+首先下载 MySQL Community Server 8.0.11：[https://dev.mysql.com/downloads/mysql/](https://dev.mysql.com/downloads/mysql/)
 
 接着配置：在安装根目录下添加 my.ini，比如我这里是：D:\Program Files\MySQL\my.ini，写入基本配置：
 
@@ -33,9 +33,9 @@ port = 3306
 # Adjust sizes as needed, experiment to find the optimal values.
 # join_buffer_size = 128M
 # sort_buffer_size = 2M
-# read_rnd_buffer_size = 2M 
+# read_rnd_buffer_size = 2M
 
-sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES 
+sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
 
 character-set-server = utf8mb4
 
@@ -64,6 +64,7 @@ mysqld --initialize --console
 2018-06-18T11:12:14.577258Z 5 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: Vwa5C>>pDVh)
 2018-06-18T11:12:44.048693Z 0 [System] [MY-013170] [Server] D:\Program Files\MySQL\bin\mysqld.exe (mysqld 8.0.11) initializing of server has completed
 ```
+
 其中 `Vwa5C>>pDVh)` 是初始密码。
 
 然后安装服务：
@@ -101,4 +102,3 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY <password
 [mysqld]
 default_authentication_plugin=mysql_native_password
 ```
-

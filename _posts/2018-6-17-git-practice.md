@@ -13,11 +13,11 @@ Git 是分布式版本控制系统（Distributed Version Control System，简称
 
 1. git push 的时候出现：`fatal: HttpRequestException encountered`
 
-    答：GitHub 从 2018 年 2 月 1 日起禁用 TLSv1 和 TLSv1.1，必须更新 windows 的 Git 凭证管理器 https://github.com/Microsoft/Git-Credential-Manager-for-Windows/releases/tag/v1.14.0
+    答：GitHub 从 2018 年 2 月 1 日起禁用 TLSv1 和 TLSv1.1，必须更新 windows 的 Git 凭证管理器，[详情点击](https://github.com/Microsoft/Git-Credential-Manager-for-Windows/releases/tag/v1.14.0)
 
-    TLS 是 Transport Layer Security，中文是安全传输层协议，包括 TLS 记录协议和 TLS 握手协议，用于在两个通信应用程序之间提供保密性和数据完整性。Github 正是将 TLSv1 和 TLSv1.1 应用于 HTTPS 链接，包括 https://github.com 和 https://api.github.com 的 WEB， API，和 Git。安全攻击不断出现，促使社区开发更强大的加密标准来应对，TLSv1 和 TLSv1.1 已不足以应对，所以 Github 宣布禁用了它们。
+    TLS 是 Transport Layer Security，中文是安全传输层协议，包括 TLS 记录协议和 TLS 握手协议，用于在两个通信应用程序之间提供保密性和数据完整性。Github 正是将 TLSv1 和 TLSv1.1 应用于 HTTPS 链接，包括 [https://github.com](https://github.com) 和 [https://api.github.com](https://api.github.com) 的 WEB， API，和 Git。安全攻击不断出现，促使社区开发更强大的加密标准来应对，TLSv1 和 TLSv1.1 已不足以应对，所以 Github 宣布禁用了它们。
 
-1. 如何暂存 untracked 文件
+2. 如何暂存 untracked 文件
 
     答：
 
@@ -25,22 +25,22 @@ Git 是分布式版本控制系统（Distributed Version Control System，简称
     git stash save --include-untracked
     ```
 
-1. gitk 中文乱码问题解决方法
+3. gitk 中文乱码问题解决方法
 
     答：在 .gitconfig 里写
     ```shell
-    [gui] 
+    [gui]
     encoding = utf-8
     ```
 
-1. 合并一半时又不想合并了
+4. 合并一半时又不想合并了
 
     答：
     ```shell
     git merge --abort
     ```
 
-1. 跟远程仓库相关的命令
+5. 跟远程仓库相关的命令
 
     答：使用 `git remote -h` 查看。
 
@@ -55,14 +55,14 @@ Git 是分布式版本控制系统（Distributed Version Control System，简称
     git remote add origin URL
     ```
 
-1. 我在 `git add` 时使用 ctrl+c 强制取消后，再 `git reset` 时报错：`fatal: Unable to create 'XXX/.git/index.lock’: File exists.`
+6. 我在 `git add` 时使用 ctrl+c 强制取消后，再 `git reset` 时报错：`fatal: Unable to create 'XXX/.git/index.lock’: File exists.`
 
-    答：http://lhdst-163-com.iteye.com/blog/1982923
+    答：[http://lhdst-163-com.iteye.com/blog/1982923](http://lhdst-163-com.iteye.com/blog/1982923)
     ```shell
     rm -f .git/index.lock
     ```
 
-1. 怎么取消对已跟踪文件的跟踪？
+7. 怎么取消对已跟踪文件的跟踪？
 
     答：
     ```shell
@@ -70,7 +70,7 @@ Git 是分布式版本控制系统（Distributed Version Control System，简称
     ```
     然后在 .gitignore 里添加该文件。
 
-1. 我开发的分支 task 落后 dev 好多，怎么办？
+8. 我开发的分支 task 落后 dev 好多，怎么办？
 
     答：正常的做法应该是将 task 合并到 dev 后再 checkout 出来，但是 task 开发一半，不能合并，所以使用 cherry-pick 将 dev 上想要的 commit 合并到 task 上：
     ```shell
@@ -78,7 +78,7 @@ Git 是分布式版本控制系统（Distributed Version Control System，简称
     ```
     > `git cherry-pick` 命令用来获得在单个提交中引入的变更，然后尝试将作为一个新的提交引入到你当前分支上。 从一个分支单独一个或者两个提交而不是合并整个分支的所有变更是非常有用的。
 
-1. 某个文件改了不想推，也不想写在 .gitignore，怎么办？
+9. 某个文件改了不想推，也不想写在 .gitignore，怎么办？
 
     答：
     ```shell
@@ -86,9 +86,10 @@ Git 是分布式版本控制系统（Distributed Version Control System，简称
     git update-index --no-assume-unchange <path> // 恢复跟踪
     ```
 
-1. 提交信息写错了怎么办？
+10. 提交信息写错了怎么办？
 
     答：
+
     ```shell
     git commit --amend -m <message> // 修改最后一次提交
     git rebase -i HEAD~3 // 修改多个提交信息
@@ -97,29 +98,29 @@ Git 是分布式版本控制系统（Distributed Version Control System，简称
     使用第二条时要注意：
     > 再次记住这是一个变基命令，在 HEAD~3..HEAD 范围内的每一个提交都会被重写，无论你是否修改信息。不要涉及任何已经推送到中央服务器的提交，这样做会产生一次变更的两个版本，因而使他人困惑。
 
+11. 跟本地分支有关的命令
 
-1. 跟本地分支有关的命令
+    答：使用 `git branch -h` 查看。
 
-    答：使用 `git branch -h` 查看。 
-    
     比如本地分支名写错了：
+
     ```shell
     git branch -m <old_branch_name> <new_branch_name>
     ```
 
-1. 跟远程分支有关的命令
+12. 跟远程分支有关的命令
 
     答：
-    
+
     比如如何删除远程分支：
-    
+
     ```shell
     git push origin --delete <branch_name>
     ```
 
-1. 怎么解决多个 Git 托管服务商帐号的 SSH-key 同时存在于一台计算机
+13. 怎么解决多个 Git 托管服务商帐号的 SSH-key 同时存在于一台计算机
 
-    答：http://www.cnblogs.com/BeginMan/p/3548139.html
+    答：[http://www.cnblogs.com/BeginMan/p/3548139.html](http://www.cnblogs.com/BeginMan/p/3548139.html)
 
     ```shell
     # 添加第二个帐号时的操作
@@ -139,7 +140,7 @@ Git 是分布式版本控制系统（Distributed Version Control System，简称
     ```
 
     config：
-    ```
+    ```shell
     # 在~/.ssh目录下找到config文件，如果没有就创建
     # 该文件用于配置私钥对应的服务器
     # first user(first@mail.com)
@@ -156,19 +157,21 @@ Git 是分布式版本控制系统（Distributed Version Control System，简称
     IdentityFile ~/.ssh/id_rsa_work
     ```
 
-1. `git merge --no-ff` 和 `git merge -ff` 的区别是什么？
+14. `git merge --no-ff` 和 `git merge -ff` 的区别是什么？
 
     答：
 
     `git merge -ff`：
+
     > When the merge resolves as a fast-forward, only update the branch pointer, without creating a merge commit. This is the default behavior.
 
     `git merge --no-ff`：
+
     > Create a merge commit even when the merge resolves as a fast-forward. This is the default behaviour when merging an annotated (and possibly signed) tag.
 
     ![]({{ site.baseurl }}/img/git-practice/14.png)
 
-1. `git push -u origin master` 中的 `-u` 有什么作用？
+15. `git push -u origin master` 中的 `-u` 有什么作用？
 
     答：
 
@@ -180,24 +183,24 @@ Git 是分布式版本控制系统（Distributed Version Control System，简称
 
     > 设置已有的本地分支跟踪一个刚刚拉取下来的远程分支，或者想要修改正在跟踪的上游分支，你可以在任意时间使用 `-u` 或 `--set-upstream-to` 选项运行 `git branch` 来显式地设置。
 
-1. `git clone` 的本质
+16. `git clone` 的本质
 
     答：
 
     > `git clone` 实际上是一个封装了其他几个命令的命令。 它创建了一个新目录，切换到新的目录，然后 `git init` 来初始化一个空的 Git 仓库， 然后为你指定的 URL 添加一个（默认名称为 origin 的）远程仓库（`git remote add`），再针对远程仓库执行 `git fetch`，最后通过 `git checkout` 将远程仓库的最新提交检出到本地的工作目录。
 
-1. 企业级的 Git 工作流长什么样？
+17. 企业级的 Git 工作流长什么样？
 
-    答：http://www.jianshu.com/p/104fa8b15d1e
+    答：[http://www.jianshu.com/p/104fa8b15d1e](http://www.jianshu.com/p/104fa8b15d1e)
 
     ![]({{ site.baseurl }}/img/git-practice/17.png)
 
-1. `git rm` 和 `rm` 的区别
+18. `git rm` 和 `rm` 的区别
 
     答：
 
     > git rm - Remove files from the working tree and from the index
-    
+
     用 `git rm` 删除物理文件和 index 中的文件；用 `rm` 仅仅是删除了物理文件，没有删除 index 中的文件，所以在操作上会有所区别。
 
     ```shell
@@ -210,7 +213,7 @@ Git 是分布式版本控制系统（Distributed Version Control System，简称
     git commit -am <message>
     ```
 
-1. 想去掉 `add` 和 `commit` 之前的改动怎么办？
+19. 想去掉 `add` 和 `commit` 之前的改动怎么办？
 
     答：
 
@@ -230,7 +233,7 @@ Git 是分布式版本控制系统（Distributed Version Control System，简称
     git clean -nfd
     ```
 
-1. 想去掉 `add` 和 `commit` 之后的改动怎么办？
+20. 想去掉 `add` 和 `commit` 之后的改动怎么办？
 
     答：
 
@@ -249,7 +252,7 @@ Git 是分布式版本控制系统（Distributed Version Control System，简称
     git reset --hard HEAD~
     ```
 
-1. git rebase 有什么用？
+21. git rebase 有什么用？
 
     答：rebase 译为变基，即改变基底，一般操作：
 
@@ -260,13 +263,13 @@ Git 是分布式版本控制系统（Distributed Version Control System，简称
     git merge dev
     ```
 
-    > 变基操作的实质是丢弃一些现有的提交，然后相应地新建一些内容一样但实际上不同的提交。 
-
-    > 一般我们这样做的目的是为了确保在向远程分支推送时能保持提交历史的整洁——例如向某个其他人维护的项目贡献代码时。 在这种情况下，你首先在自己的分支里进行开发，当开发完成时你需要先将你的代码变基到 origin/master 上，然后再向主项目提交修改。 这样的话，该项目的维护者就不再需要进行整合工作，只需要快进合并便可。 
-
+    > 变基操作的实质是丢弃一些现有的提交，然后相应地新建一些内容一样但实际上不同的提交。
+    >  
+    > 一般我们这样做的目的是为了确保在向远程分支推送时能保持提交历史的整洁——例如向某个其他人维护的项目贡献代码时。 在这种情况下，你首先在自己的分支里进行开发，当开发完成时你需要先将你的代码变基到 origin/master 上，然后再向主项目提交修改。 这样的话，该项目的维护者就不再需要进行整合工作，只需要快进合并便可。
+    >  
     > 总的原则是，只对尚未推送或分享给别人的本地修改执行变基操作清理历史，从不对已推送至别处的提交执行变基操作。
 
-1. `push` 到 Github 时，怎么才不用每次都要输入用户名和密码
+22. `push` 到 Github 时，怎么才不用每次都要输入用户名和密码
 
     答：将 https 方式换为 ssh 方式：
 
@@ -276,10 +279,8 @@ Git 是分布式版本控制系统（Distributed Version Control System，简称
     git remote add origin <URL>
     ```
 
-1. 修复 bug 的代码与自己开发新功能有冲突怎么办？
+23. 修复 bug 的代码与自己开发新功能有冲突怎么办？
 
     答：使用 `git stash` 储藏与清理。
 
-    > 有时，当你在项目的一部分上已经工作一段时间后，所有东西都进入了混乱的状态，而这时你想要切换到另一个分支做一点别的事情。 问题是，你不想仅仅因为过会儿回到这一点而为做了一半的工作创建一次提交。 针对这个问题的答案是 `git stash` 命令。 
-
-
+    > 有时，当你在项目的一部分上已经工作一段时间后，所有东西都进入了混乱的状态，而这时你想要切换到另一个分支做一点别的事情。 问题是，你不想仅仅因为过会儿回到这一点而为做了一半的工作创建一次提交。 针对这个问题的答案是 `git stash` 命令。
