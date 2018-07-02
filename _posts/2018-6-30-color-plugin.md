@@ -7,7 +7,7 @@ title: 中文颜色选择
 
 这个插件的功能是，列出用中文描述的颜色，点击复制对应的 HEX 值。
 
-[代码仓库](https://github.com/zhictory/color)``
+[Github](https://github.com/zhictory/color)``
 
 <link rel="stylesheet" href="{{ "/assets/css/color-plugin.css" | prepend: site.baseurl }}">
 
