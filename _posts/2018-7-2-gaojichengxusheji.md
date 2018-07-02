@@ -5,6 +5,8 @@ title: 《JavaScript 高级程序设计（第三版）》笔记
 
 # 《JavaScript 高级程序设计（第三版）》笔记
 
+这些笔记是博主大概两年前阅读红宝书时整理的，基本都是思维导图，一直放在个人笔记里。现在将它们整理放到博客里，便于分享。
+
 1. [基本概念](http://d8480a24.wiz03.com/share/s/3oi0EA1grx7x2Lj00z1ZXVvc0F5-oA3prAG12lsN1F0uzPDx)
 2. [变量和作用域整理](http://d8480a24.wiz03.com/share/s/3oi0EA1grx7x2Lj00z1ZXVvc2rYI8337JQGP2aJGXp0ZfUiM)
 3. [传递参数](http://d8480a24.wiz03.com/share/s/3oi0EA1grx7x2Lj00z1ZXVvc2N3xmI31SAcR2CJ_D22-JDpJ)
@@ -23,3 +25,5 @@ title: 《JavaScript 高级程序设计（第三版）》笔记
 16. [事件整理](http://d8480a24.wiz03.com/share/s/3oi0EA1grx7x2Lj00z1ZXVvc0wWwEB1mJkOj2UvFz-1sc9DB)
 17. [高级定时器](http://d8480a24.wiz03.com/share/s/3oi0EA1grx7x2Lj00z1ZXVvc3s9_Yo0jD4yC2CmNaJ30GXWp)
 18. [数据存储整理](http://d8480a24.wiz03.com/share/s/3oi0EA1grx7x2Lj00z1ZXVvc278NOC1XY4YF2u1JxQ0MznPf)
+
+如果需要笔记里的思维导图源文件，请邮箱联系博主：[zhictory@qq.com](mailto:zhictory@qq.com)
