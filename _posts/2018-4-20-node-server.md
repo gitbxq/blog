@@ -5,6 +5,8 @@ title: 用 Node.js 搭建本地服务器
 
 # 用 Node.js 搭建本地服务器
 
+[Github](https://github.com/zhictory/node-server)
+
 网友 [bottle_](https://segmentfault.com/u/bottle1125) 提供搭建一个简单本地服务器的思路为下：
 
 > - 我们需要一个 HTTP 服务器
@@ -184,6 +186,16 @@ title: 用 Node.js 搭建本地服务器
 - 关于服务器响应头中的 Content-Type
 
     一般网站的做法是：当返回 HTML 页面时为 text/html，当使用 JSONP 时为 text/javascript，当使用 CORS 时为 application/json。
+
+- 关于跨域
+
+    如果希望某个接口可以跨域，需要设置响应头的 `Access-Control-Allow-Origin` 为 `*`，比如允许 download 接口跨域，代码修改如下：
+
+    ```shell
+    response.writeHead(200, { 'Content-Type': 'text/html', 'Access-Control-Allow-Origin': '*' });
+    ```
+
+    调试的话，只要启动两个不同端口的 index.js 即可，代码仓库里 server.1.js 和 server.2.js 就表示两个不同的 index.js。
 
 - 关于 Node.js 热部署
 
