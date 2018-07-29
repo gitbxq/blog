@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 教你如何使用Jekyll
+title: 教你如何使用 Jekyll
 ---
 # 教你如何使用Jekyll
 
